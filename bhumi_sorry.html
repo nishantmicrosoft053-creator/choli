@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Really Sorry ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#8ec5fc,#e0c3fc);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+width:90%;
+max-width:700px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
+padding:45px;
+border-radius:25px;
+text-align:center;
+color:white;
+box-shadow:0 10px 35px rgba(0,0,0,.25);
+animation:fade 1.5s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+font-size:45px;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+line-height:1.8;
+margin-top:15px;
+}
+
+button{
+margin-top:35px;
+padding:14px 40px;
+border:none;
+border-radius:50px;
+font-size:18px;
+cursor:pointer;
+background:white;
+color:#ff4d79;
+font-weight:bold;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#message{
+display:none;
+margin-top:25px;
+font-size:20px;
+animation:fade 1s;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float linear infinite;
+opacity:.8;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px) scale(1.4);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>I'm Really Sorry 🤍</h1>
+
+<p>
+I know I made mistakes...
+Maybe my words hurt you.
+That was never my intention.
+</p>
+
+<p>
+You don't have to forgive me today,
+or even reply immediately.
+I just wanted you to know that
+I'm truly sorry from the bottom of my heart.
+</p>
+
+<p>
+Your smile means more to me than you know.
+Seeing you upset because of me hurts.
+If I could go back and fix everything,
+I genuinely would.
+</p>
+
+<button onclick="showMessage()">
+Click Here ❤️
+</button>
+
+<div id="message">
+🌸 Thank you for reading this.<br><br>
+No matter what you decide,<br>
+I sincerely wish you happiness.<br><br>
+And if someday you feel like giving me another chance,<br>
+I'll do my best not to disappoint you again. 🤍
+</div>
+
+</div>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("message").style.display="block";
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=["🤍","💖","💕","❤️","💗"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+heart.style.fontSize=(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},9000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
